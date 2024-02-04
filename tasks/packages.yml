@@ -4,3 +4,8 @@
     - htop
     - mc
     - tmux
+
+- name: Add Tailscale repository
+  ansible.builtin.apt_repository:
+    repo: deb https://pkgs.tailscale.com/stable/ubuntu jammy main
+    state: present
