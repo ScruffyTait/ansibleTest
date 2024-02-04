@@ -5,6 +5,10 @@
     - mc
     - tmux
 
+- name: Add Tailscale cert
+  ansible.builtin.shell:
+    cmd: curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/jammy.noarmor.gpg | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
+
 - name: Add Tailscale repository
   ansible.builtin.apt_repository:
     repo: deb https://pkgs.tailscale.com/stable/ubuntu jammy main
