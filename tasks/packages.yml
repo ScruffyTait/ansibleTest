@@ -1,9 +1,5 @@
 - name: Install packages
-  apt: name={{item}}
-  with_items:
-    - htop
-    - mc
-    - tmux
+  apt: name= ['htop', 'mc', 'tmux']
 
 - name: Download Tailscale Cert
   ansible.builtin.get_url:
